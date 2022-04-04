@@ -3,7 +3,7 @@ using System;
 
 namespace Entities.Dtos
 {
-    public class UserDto:IDto
+    public class UserDto : IDto
     {
         public int Id { get; set; }
         public string UserName { get; set; }
