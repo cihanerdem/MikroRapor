@@ -2,8 +2,7 @@
 
 namespace DataAccess.Abstract
 {
-    public interface IUserDal : IBaseRepository<User>
+    public interface ICategoryDal:IBaseRepository<Category>
     {
-
     }
 }
