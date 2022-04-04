@@ -1,4 +1,8 @@
+using Business.Abstract;
+using Business.Concrate;
+using DataAccess.Abstract;
 using DataAccess.Concrate.Context;
+using DataAccess.Concrate.EntityFrameWork;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +28,9 @@ namespace WepAPI
         {
             services.AddDbContext<MikroRaporContext>(opts => opts.UseSqlServer("Data Source=DESKTOP-BP9BGS3;Initial Catalog=MikroReportDb;Integrated  Security=true;",
                options => options.MigrationsAssembly("DataAccess").MigrationsHistoryTable(HistoryRepository.DefaultTableName, "dbo")));
+
+            services.AddTransient<IUserDal, EFUserDal>();
+            services.AddTransient<IUserService, UserService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
