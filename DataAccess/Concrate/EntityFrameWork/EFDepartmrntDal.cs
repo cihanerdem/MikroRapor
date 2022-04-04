@@ -4,7 +4,7 @@ using Entities.Concrate.BaseEntities;
 
 namespace DataAccess.Concrate.EntityFrameWork
 {
-    public class EFUserDal : EFBaseRepository<User, MikroRaporContext>, IUserDal
+    public  class EFDepartmrntDal:EFBaseRepository<Department,MikroRaporContext>,IDepartmentDal
     {
     }
 }
