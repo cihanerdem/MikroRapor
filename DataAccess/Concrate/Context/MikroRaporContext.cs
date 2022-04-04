@@ -23,8 +23,17 @@ namespace DataAccess.Concrate.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UserMap());
+            modelBuilder.ApplyConfiguration(new DepartmentMap());
+            modelBuilder.ApplyConfiguration(new CategoryMap());
+            modelBuilder.ApplyConfiguration(new AppMenuMap());
+            modelBuilder.ApplyConfiguration(new ReportSourceMap());
+
         }
 
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Department> Departments { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<AppMenu> AppMenus { get; set; }
+        public virtual DbSet<ReportSource> ReportSources { get; set; }
     }
 }
