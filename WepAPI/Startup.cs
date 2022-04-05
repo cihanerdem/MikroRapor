@@ -29,8 +29,16 @@ namespace WepAPI
             services.AddDbContext<MikroRaporContext>(opts => opts.UseSqlServer("Data Source=DESKTOP-BP9BGS3;Initial Catalog=MikroReportDb;Integrated  Security=true;",
                options => options.MigrationsAssembly("DataAccess").MigrationsHistoryTable(HistoryRepository.DefaultTableName, "dbo")));
 
+            
             services.AddTransient<IUserDal, EFUserDal>();
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IAppMenuDal, EFAppMenuDal>();
+            services.AddTransient<IAppMenuService, AppMenuService>();
+            services.AddTransient<ICategoryDal, EFCategoryDal>();
+            services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IDepartmentDal, EFDepartmentDal>();
+            services.AddTransient<IDepartmentService, DepartmentService>();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
