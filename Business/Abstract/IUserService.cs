@@ -1,4 +1,5 @@
-﻿using Entities.Dtos;
+﻿using Core.Helpers.Jwt;
+using Entities.Dtos;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -12,5 +13,6 @@ namespace Business.Abstract
         Task<UserDto> AddAsync(UserDto userAdd);
         Task<UserDto> Updatesync(UserDto userUpdate);
         Task<bool> DeleteAsync(int id);
+        Task<AccessToken> Authenticate(LoginDto login);
     }
 }
